@@ -10,7 +10,7 @@ REST API built with Node.js, Express, and MongoDB.
 
 ## ⚙️ Run Locally
 npm install
-npm start
+node server.js
 
 ## 🔗 Frontend Repo
-https://github.com/your-username/project1-frontend
+https://github.com/your-username/project1-client
