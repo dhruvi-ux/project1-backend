@@ -10,7 +10,7 @@ const app = express();
 // 🔥 Enable gzip compression for all responses
 app.use(compression());
 
-javascript/* ✅ CORS for development and production */
+/* ✅ CORS for development and production */
 app.use(cors({
   origin: [
     "http://localhost:4200",
