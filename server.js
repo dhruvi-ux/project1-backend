@@ -10,9 +10,14 @@ const app = express();
 // 🔥 Enable gzip compression for all responses
 app.use(compression());
 
-/* ✅ VERY IMPORTANT — allow all origins while developing */
+javascript/* ✅ CORS for development and production */
 app.use(cors({
-  origin: ["http://localhost:4200", "http://localhost:4300", "http://localhost:4500"],
+  origin: [
+    "http://localhost:4200",
+    "http://localhost:4300",
+    "http://localhost:4500",
+    "https://project1-client.vercel.app"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
@@ -45,7 +50,8 @@ app.use("/api/stats", require("./routes/stats.routes"));
 app.use("/api/blogs", require("./routes/blog.routes")); // 🔥 Blog routes
 
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
